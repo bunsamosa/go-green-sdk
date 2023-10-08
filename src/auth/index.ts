@@ -57,5 +57,15 @@ export class authClient {
     public getUserAddress(): string | null {
         return this.userAddress;
     };
+
+    // return connext instance
+    public getConnex(): Connex {
+        return this.connex;
+    };
+
+    // return vendor instance
+    public getVendor(): Connex.Vendor {
+        return this.vendor;
+    };
 }
 export default {authClient};
