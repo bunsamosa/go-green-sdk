@@ -1,4 +1,5 @@
-import { ChatGPTAPI } from 'chatgpt'
+import sendMessage from './gpthandler'
+
 import {
     advisorPrompt,
     shortPrompt,
@@ -6,17 +7,14 @@ import {
     recyclePrompt,
     reUsePrompt,
     alternativePrompt } from './prompts';
-
-
 export class advisorClient {
-    private client: ChatGPTAPI
+    private endpoint: string;
+    private apiKey: string;
 
     // initialize sdk with api key
-    constructor(apiKey: string) {
-        this.client = new ChatGPTAPI({
-            apiKey: apiKey,
-            systemMessage: advisorPrompt
-        });
+    constructor(endpoint: string, apiKey: string) {
+        this.endpoint = endpoint;
+        this.apiKey = apiKey;
     }
 
     // request advise for recycling
@@ -27,7 +25,8 @@ export class advisorClient {
             prompt = longPrompt;
         }
 
-        const res = await this.client.sendMessage(prompt + recyclePrompt.replace('{item}', item));
+        const userMsg = prompt + recyclePrompt.replace('{item}', item)
+        const res = await sendMessage(this.endpoint, this.apiKey, advisorPrompt, userMsg);
         return res.text;
     }
 
@@ -39,7 +38,8 @@ export class advisorClient {
             prompt = longPrompt;
         }
 
-        const res = await this.client.sendMessage(prompt + reUsePrompt.replace('{item}', item));
+        const userMsg = prompt + reUsePrompt.replace('{item}', item);
+        const res = await sendMessage(this.endpoint, this.apiKey, advisorPrompt, userMsg);
         return res.text;
     }
 
@@ -51,16 +51,16 @@ export class advisorClient {
             prompt = longPrompt;
         }
 
-        const res = await this.client.sendMessage(prompt + alternativePrompt.replace('{item}', item));
+        const userMsg = prompt + alternativePrompt.replace('{item}', item);
+        const res = await sendMessage(this.endpoint, this.apiKey, advisorPrompt, userMsg);
         return res.text;
     }
 
     // send a generic message to the bot
     public async sendMessage(message: string) {
-        const res = await this.client.sendMessage(message);
+        const res = await sendMessage(this.endpoint, this.apiKey, advisorPrompt, message);
         return res.text;
     }
 }
-
 
 export default { advisorClient };

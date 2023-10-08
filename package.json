@@ -1,6 +1,6 @@
 {
   "name": "vitalearth-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Empowering Sustainability apps on the VeChain Network!",
   "scripts": {
     "prepare": "npm run build",
@@ -36,8 +36,8 @@
   "dependencies": {
     "@types/node": "^12.20.55",
     "@vechain/connex": "^2.1.0",
-    "chatgpt": "^5.2.5",
-    "isomorphic-unfetch": "^4.0.2"
+    "isomorphic-unfetch": "^4.0.2",
+    "openai": "^4.11.1"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
