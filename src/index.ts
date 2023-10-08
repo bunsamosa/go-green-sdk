@@ -1,11 +1,7 @@
-// src/index.ts
-
-import { Posts } from './resources/posts';
-
-export class Library {
-    posts: Posts;
-
-    constructor(config: { apiKey: string; baseUrl?: string }) {
-        this.posts = new Posts(config);
-    }
+// export { authClient } from './auth';
+// export {gg} from './auth';
+function gg() {
+    console.log('gg');
 }
+
+export default { gg };

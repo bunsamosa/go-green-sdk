@@ -1,22 +1,11 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "target": "es2015",
     "declaration": true,
-    "removeComments": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2016",
-    "sourceMap": false,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true
+    "outDir": "./dist"
   },
-    "include": [
-      "src/**/*"
-    ],
-  "exclude": [
-    "node_modules",
-    "test",
-    "lib",
-    "**/*spec.ts"
+  "include": [
+    "src/**/*"
   ]
 }
