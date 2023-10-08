@@ -1,2 +1,2 @@
-# Go Green SDK
-Social layer for sustainability apps on VeChain
+# VitalEarth SDK
+Empowering Sustainability apps on the VeChain Network!
