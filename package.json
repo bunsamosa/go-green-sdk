@@ -1,6 +1,6 @@
 {
   "name": "vitalearth-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Empowering Sustainability apps on the VeChain Network!",
   "scripts": {
     "prepare": "npm run build",

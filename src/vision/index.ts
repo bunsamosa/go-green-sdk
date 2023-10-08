@@ -29,3 +29,5 @@ export class visionClient{
         return data;
     }
 }
+
+export default {visionClient};

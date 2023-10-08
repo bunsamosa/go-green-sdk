@@ -61,3 +61,6 @@ export class advisorClient {
         return res.text;
     }
 }
+
+
+export default { advisorClient };
