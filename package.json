@@ -1,6 +1,6 @@
 {
-  "name": "hulk-sdk",
-  "version": "0.0.6",
+  "name": "go-green-sdk",
+  "version": "0.0.1",
   "description": "Social layer for sustainability apps on VeChain",
   "scripts": {
     "prepare": "npm run build",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bunsamosa/hulk-sdk.git"
+    "url": "git+https://github.com/bunsamosa/go-green-sdk.git"
   },
   "keywords": [
     "sdk",
@@ -18,9 +18,9 @@
   "author": "Madhukara S Holla",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bunsamosa/hulk-sdk/issues"
+    "url": "https://github.com/bunsamosa/go-green-sdk/issues"
   },
-  "homepage": "https://github.com/bunsamosa/hulk-sdk#readme",
+  "homepage": "https://github.com/bunsamosa/go-green-sdk#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "eslint": "^8.51.0",

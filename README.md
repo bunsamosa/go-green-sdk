@@ -1,2 +1,2 @@
-# hulk-sdk
+# Go Green SDK
 Social layer for sustainability apps on VeChain
