@@ -1,6 +1,6 @@
 {
   "name": "hulk-sdk",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "Social layer for sustainability apps on VeChain",
   "scripts": {
     "prepare": "npm run build",

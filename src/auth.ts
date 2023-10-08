@@ -9,6 +9,7 @@ export class authClient {
     private name: string;
     private userAddress: string | null = null;
 
+    // Initialize the SDK with the network and app name
     constructor(public network: 'main' | 'test', public appName: string) {
        if( network === 'main' ) {
               this.node = VECHAIN_MAINNET;
@@ -30,7 +31,8 @@ export class authClient {
         this.name = appName;
     }
 
-    public login(): string | null {
+    // login method to request user to sign a message
+    public async login(): Promise<string | null> {
         const cert = this.vendor.sign("cert", {
             purpose: "identification",
             payload: {
@@ -39,15 +41,19 @@ export class authClient {
                 Please sign this message to verify your identity."
             }
         });
-        cert.request().then((res) => {
+        try {
+            const res = await cert.request();
             this.userAddress = res.annex.signer;
-        },
-        (err) => {
+            return this.userAddress;
+        }
+        catch(err) {
             console.log(err);
-        });
+            this.userAddress = null;
+        };
         return this.userAddress;
     };
 
+    // fetch user address
     public getUserAddress(): string | null {
         return this.userAddress;
     };
