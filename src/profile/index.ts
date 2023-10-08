@@ -7,14 +7,14 @@ export class profileClient {
 
     // fetch users profile
     public async getProfile(address: string) {
-        const response = await fetch(`${this.metadataServer}/user/${address}`);
+        const response = await fetch(`${this.metadataServer}/user?tokenID=${address}`);
         const data = await response.json();
         return data;
     }
 
     // update users profile
     public async updateMetadata(address: string, metadata: any) {
-        const response = await fetch(`${this.metadataServer}/update/${address}`, {
+        const response = await fetch(`${this.metadataServer}/update?tokenID=${address}`, {
             method: 'POST',
             body: JSON.stringify({ metadata }),
             headers: {
